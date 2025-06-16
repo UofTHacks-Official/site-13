@@ -41,7 +41,7 @@ const Hero = () => {
           style={{
             width: "100%",
             height: "auto",
-            transform: "translateY(50%)",
+            transform: "translateY(45%)",
           }}
         />
       </StyledLowerHeroSection>
