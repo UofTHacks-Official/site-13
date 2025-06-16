@@ -47,6 +47,32 @@ const Hero = () => {
           }}
         />
       </div>
+      {/* Toronto skyline glow */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: -600,
+          left: 0,
+          zIndex: 1,
+          width: "auto",
+          height: "1200px", // Adjust this to control the size
+          pointerEvents: "none", // Allows clicks to pass through
+        }}
+      >
+        <Image
+          src="landing-page/toronto_skyline_glow.svg"
+          alt="Toronto skyline"
+          width={1000}
+          height={1000}
+          style={{
+            width: "auto",
+            height: "100%",
+            opacity: 1,
+          }}
+        />
+      </div>
+
+      {/* Background mountain */}
       <div
         style={{
           position: "absolute",
@@ -61,6 +87,56 @@ const Hero = () => {
         <Image
           src="landing-page/background_mountain.svg"
           alt="background mountain"
+          width={1000}
+          height={1000}
+          style={{
+            width: "auto",
+            height: "100%",
+            opacity: 1.0, // Slight transparency so it doesn't overpower the content
+          }}
+        />
+      </div>
+
+      {/* Background mountain glow */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: -1000,
+          right: 0,
+          zIndex: 2,
+          width: "auto",
+          height: "1500px", // Adjust this to control the size
+          pointerEvents: "none", // Allows clicks to pass through
+        }}
+      >
+        <Image
+          src="landing-page/background_mountain_glow.svg"
+          alt="background mountain"
+          width={1000}
+          height={1000}
+          style={{
+            width: "auto",
+            height: "100%",
+            opacity: 1.0, // Slight transparency so it doesn't overpower the content
+          }}
+        />
+      </div>
+
+      {/* Sky glow */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 400,
+          right: 250,
+          zIndex: 2,
+          width: "auto",
+          height: "600px", // Adjust this to control the size
+          pointerEvents: "none", // Allows clicks to pass through
+        }}
+      >
+        <Image
+          src="landing-page/sky_glow.svg"
+          alt="sky glow"
           width={1000}
           height={1000}
           style={{
