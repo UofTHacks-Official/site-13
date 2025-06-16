@@ -8,6 +8,7 @@ const Hero = () => {
     <div style={{ position: "relative", minHeight: "100vh" }}>
       <StarryBackground />
       <Navbar />
+      {/* Title section */}
       <div
         style={{
           position: "relative",
@@ -23,8 +24,32 @@ const Hero = () => {
         <TitleSection />
       </div>
 
-      {/* Toronto skyline in bottom left corner */}
+      {/* Lower hero section */}
       <div
+        style={{
+          position: "absolute",
+          bottom: 0, // Div lines up with bottom of viewport
+          left: 0,
+          zIndex: 1,
+          width: "100%",
+          height: "auto",
+        }}
+      >
+        <Image
+          src="landing-page/hero_section_lower.svg"
+          alt="lower hero section"
+          width={1000}
+          height={1000}
+          style={{
+            width: "100%",
+            height: "auto",
+            transform: "translateY(50%)", // 30% of SVG is pushed below the div
+          }}
+        />
+      </div>
+
+      {/* Toronto skyline in bottom left corner */}
+      {/* <div
         style={{
           position: "absolute",
           bottom: 0,
@@ -46,10 +71,10 @@ const Hero = () => {
             opacity: 0.8, // Slight transparency so it doesn't overpower the content
           }}
         />
-      </div>
+      </div> */}
 
       {/* Toronto skyline glow */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: -1000,
@@ -71,10 +96,10 @@ const Hero = () => {
             opacity: 1,
           }}
         />
-      </div>
+      </div> */}
 
       {/* Background mountain */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: 0,
@@ -96,10 +121,10 @@ const Hero = () => {
             opacity: 1.0, // Slight transparency so it doesn't overpower the content
           }}
         />
-      </div>
+      </div> */}
 
       {/* Background mountain glow */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: -1000,
@@ -121,10 +146,10 @@ const Hero = () => {
             opacity: 1.0, // Slight transparency so it doesn't overpower the content
           }}
         />
-      </div>
+      </div> */}
 
       {/* Sky glow */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: 400,
@@ -146,7 +171,7 @@ const Hero = () => {
             opacity: 1.0, // Slight transparency so it doesn't overpower the content
           }}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
