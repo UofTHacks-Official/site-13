@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./LandingPage.module.css";
 
 const TitleSection = () => {
