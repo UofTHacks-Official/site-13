@@ -5,7 +5,6 @@ import {
   FAQSection,
   HeaderContainer,
   Title,
-  Subtitle,
   StyledAccordion,
   StyledAccordionSummary,
   StyledAccordionDetails,
@@ -17,6 +16,7 @@ import { faqs, FAQ as FAQType } from "./faqs";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { Container, Box } from "@mui/material";
+import Image from "next/image";
 
 const FAQ = () => {
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
@@ -55,10 +55,10 @@ const FAQ = () => {
               </StyledIcon>
             }
           >
-            <Question>{faq.question}</Question>
+            <Question>{faq.title}</Question>
           </StyledAccordionSummary>
           <StyledAccordionDetails>
-            <Answer>{faq.answer}</Answer>
+            <Answer dangerouslySetInnerHTML={{ __html: faq.content }} />
           </StyledAccordionDetails>
         </StyledAccordion>
       ))}
@@ -67,12 +67,22 @@ const FAQ = () => {
 
   return (
     <FAQSection>
+      <Image
+        src="/landing-page/faq_background.svg"
+        alt="FAQ section upper"
+        width={1000}
+        height={1000}
+        style={{
+          width: "100%",
+          height: "auto",
+          position: "absolute",
+          bottom: -1000,
+          zIndex: -1,
+        }}
+      />
       <Container maxWidth="lg">
         <HeaderContainer>
           <Title variant="h2">Frequently Asked Questions</Title>
-          <Subtitle variant="h6">
-            Everything you need to know about UofTHacks 13
-          </Subtitle>
         </HeaderContainer>
 
         <Box

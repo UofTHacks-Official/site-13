@@ -37,7 +37,6 @@ const Subtitle = styled(Typography)({
 const StyledAccordion = styled(Accordion)({
     background: "transparent !important",
     border: "none !important",
-    borderBottom: "1px solid var(--border-light) !important",
     borderRadius: "0 !important",
     marginBottom: "0 !important",
     boxShadow: "none !important",
@@ -62,6 +61,12 @@ const StyledAccordionSummary = styled(AccordionSummary)({
     "& .MuiAccordionSummary-content": {
         margin: "0 !important",
     },
+
+    "& .MuiAccordionSummary-expandIconWrapper": {
+        order: -1,
+        marginRight: "1rem",
+        marginLeft: 0,
+    },
 });
 
 const StyledAccordionDetails = styled(AccordionDetails)({
@@ -82,7 +87,7 @@ const Answer = styled(Typography)({
 });
 
 const StyledIcon = styled("div")({
-    color: "var(--accent-blue) !important",
+    color: "white !important",
     fontSize: "1.5rem !important",
     display: "flex",
     alignItems: "center",

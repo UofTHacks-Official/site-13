@@ -1,58 +1,133 @@
+const email =
+    '<a href="mailto:official@uofthacks.com" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">official@uofthacks.com</a>';
+const covidPolicy =
+    '<a href="https://ehs.utoronto.ca/covid-19-information/" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">University of Toronto\'s</a>';
+const instagram =
+    '<a href="https://www.instagram.com/uofthacks/" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">Instagram</a>';
+const mlhcoc =
+    '<a href="http://hackp.ac/coc" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">Code of Conduct</a>';
+
 export interface FAQ {
     id: number;
-    question: string;
-    answer: string;
+    title: string;
+    content: string;
 }
 
 export const faqs: FAQ[] = [
     {
         id: 1,
-        question: "What is UofTHacks 13?",
-        answer: "UofTHacks 13 is the University of Toronto's premier hackathon event where students, developers, and innovators come together to build amazing projects in 36 hours. It's a weekend of coding, creativity, and collaboration."
+        title: "What is UofTHacks?",
+        content:
+            "UofTHacks is an annual hackathon organized by students at the University of Toronto. It brings together over 500+ tech enthusiasts, innovators, and creators from various backgrounds to collaborate and build innovative projects in 36 hours.",
     },
     {
         id: 2,
-        question: "When and where is the event?",
-        answer: "UofTHacks 13 will take place in January 2025 as an in-person event at the University of Toronto campus. Specific venue details will be announced closer to the event date."
+        title: "When and where is UofTHacks held?",
+        content:
+            "UofTHacks 12 is set to take place from January 17th to January 19th, 2025! This year’s event will be hosted entirely in-person in the Myhal Centre! The exact schedule of all the ceremonies, activities, and workshops will be released in the week leading up to the event!",
     },
     {
         id: 3,
-        question: "Who can participate?",
-        answer: "UofTHacks is open to all university and college students, as well as recent graduates. You don't need to be a student at UofT to participate! All skill levels are welcome, from beginners to experienced developers."
+        title: "Who can participate?",
+        content:
+            "High school and university students can join, no matter their experience. Whether you're a coding expert or a beginner, everyone's welcome. We will provide workshops and Mentorship to help you build your project!",
     },
     {
         id: 4,
-        question: "How much does it cost?",
-        answer: "UofTHacks 13 is completely free to attend! We provide meals, snacks, swag, and prizes. Just bring your laptop, charger, and enthusiasm to hack!"
+        title: "Can I attend if I live far away?",
+        content: `Yes! If you're registered, you're all set. Just get yourself to Toronto and bring any essentials for an overnight stay. We'll have places for you to rest, but unfortunately we will not be providing any travel reimbursements. If you're coming from outside Canada, make sure to follow the travel rules.
+        <div style="margin-top: 1rem"><strong>Please note:</strong>
+        If you will be attending from outside of Canada, you need to ensure you are following the Government of Canada's travel policies. Please contact us by sending a direct message on Instagram or at ${email} for more information. We'd be happy to help!</div>`,
     },
     {
         id: 5,
-        question: "What should I bring?",
-        answer: "Bring your laptop, chargers, any hardware you want to hack with, a valid student ID, and comfortable clothes. We'll provide food, drinks, and a place to rest between coding sessions."
+        title: "Can I join virtually?",
+        content:
+            "Unfortunately, we will not have any virtual aspects to this year's event. All members of your team must be in-person to be considered for judging.",
     },
     {
         id: 6,
-        question: "Do I need a team?",
-        answer: "Teams are not required! You can participate solo, come with a team of up to 4 people, or find teammates at the event during our team formation session."
+        title: "How many hackers per team?",
+        content:
+            "Each team can have up to 4 hackers. As long as they are a registered hacker with UofTHacks, there are no restrictions on who can be on your team. However, there may be challenges that have team member requirements to be eligible for specific prizes. More details will be announced during opening ceremonies.",
     },
     {
         id: 7,
-        question: "What can I build?",
-        answer: "You can build anything! Web apps, mobile apps, hardware projects, games, AI/ML projects, or anything else you can imagine. We'll have various sponsor prizes and categories to compete in."
+        title: "How do I sign up with my teammates or join a team?",
+        content:
+            "Applications will be on an individual basis. You can form a team before or during the event. We'll have a Discord channel where you can connect with others and find teammates.",
     },
     {
         id: 8,
-        question: "Are there prizes?",
-        answer: "Yes! We have amazing prizes for various categories including overall winners, best use of sponsor technologies, most creative project, and more. Prize details will be announced closer to the event."
+        title: "How much does it cost to attend UofTHacks and what should I bring?",
+        content:
+            "The event is completely free! We will provide lots of food, snacks, and the venue will remain open for the entirety of the event! We will send a hacker pack with suggested items to bring.",
     },
     {
         id: 9,
-        question: "Will there be mentors and workshops?",
-        answer: "Absolutely! We'll have experienced mentors available throughout the event to help with technical questions, and we'll host workshops on various technologies and topics."
+        title: "Do I have to know how to code beforehand?",
+        content:
+            "Nope! Coding is great, but the design and business side of your project is just as important. UofTHacks is a great place to learn something new, with workshops and Mentors available to help you out. We’ll also have Mentors floating around to help out whenever you need it!",
     },
     {
         id: 10,
-        question: "How do I register?",
-        answer: "Registration will open soon! Keep an eye on our social media and website for announcements. Spots fill up quickly, so make sure to register early when applications open."
-    }
+        title: "Can I work on my project before the event?",
+        content:
+            "No. To ensure fairness, and integrity, all work on your project must be done during the event. All submitted projects must include a public GitHub repository. Any projects that violate our rules will be disqualified from judging.",
+    },
+    {
+        id: 11,
+        title: "What are your COVID-19 and other respiratory illness regulations?",
+        content: `Our policy will reflect the ${covidPolicy} protocols. The focus will be to ensure the event is a safe environment for all participants. We will have hand sanitizer stations and disinfectant wipes throughout the venue.`,
+    },
+    {
+        id: 12,
+        title: "What do Mentors do?",
+        content:
+            "Mentors are your key resources for guidance. They provide valuable industry knowledge, offer professional career advice, and assist with the technical challenges you may face during your project. Their role is to support and enhance your experience with both expertise and insight.",
+    },
+    {
+        id: 13,
+        title: "What are the requirements to be a Mentor?",
+        content:
+            "To be a Mentor, you must be at least 18 years old and have relevant experience in the tech industry. While previous internship experience is not required, it is considered an advantage. Mentors should possess strong technical knowledge and a commitment to supporting participants throughout the event.",
+    },
+    {
+        id: 14,
+        title: "What do Volunteers do?",
+        content:
+            "Volunteers help make sure the event runs smoothly! They assist with setup, logistics, and anything else that needs to be done to keep the event awesome.",
+    },
+    {
+        id: 15,
+        title: "What are the requirements to be a Volunteer?",
+        content:
+            "You just need to be enthusiastic and ready to help! No specific skills are needed, just a good attitude and a willingness to pitch in.",
+    },
+    {
+        id: 16,
+        title:
+            "Are sleeping areas or supplies available for participants at UofTHacks 2025?",
+        content:
+            "Unfortunately, we are unable to provide on-site sleeping accommodations as the booked spaces are not equipped with sleeping quarters.",
+    },
+    {
+        id: 17,
+        title:
+            "What is MLH?",
+        content:
+            `Major League Hacking (MLH) is the official student hackathon league. Each year, we power over 300 weekend-long invention competitions that inspire innovation, cultivate communities and teach computer science skills to more than 500,000 developers around the world. MLH is an engaged and passionate maker community, consisting of the next generation of technology leaders and entrepreneurs. ${mlhcoc}`,
+    },
+    {
+        id: 18,
+        title:
+            "How do I apply to UofTHacks 12?",
+        content:
+            `Our application period for UofTHacks 12 has already passed. We encourage you to follow us on Instagram to stay up to date with UofTHacks news!`
+    },
+    {
+        id: 19,
+        title: "I still have a question...",
+        content: `No worries! You can use the Contact Us form below or reach out to us on ${instagram}, and we'll help with anything else you need!`,
+    },
 ];
