@@ -47,15 +47,16 @@ const Hero = () => {
           }}
         />
       </div>
+
       {/* Toronto skyline glow */}
       <div
         style={{
           position: "absolute",
-          bottom: -600,
-          left: 0,
+          bottom: -1000,
+          left: -150,
           zIndex: 1,
           width: "auto",
-          height: "1200px", // Adjust this to control the size
+          height: "1800px", // Adjust this to control the size
           pointerEvents: "none", // Allows clicks to pass through
         }}
       >
@@ -127,10 +128,10 @@ const Hero = () => {
         style={{
           position: "absolute",
           bottom: 400,
-          right: 250,
+          right: 100,
           zIndex: 2,
           width: "auto",
-          height: "600px", // Adjust this to control the size
+          height: "750px", // Adjust this to control the size
           pointerEvents: "none", // Allows clicks to pass through
         }}
       >
