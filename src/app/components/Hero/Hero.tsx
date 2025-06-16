@@ -16,21 +16,6 @@ const Hero = () => {
       <StyledTitleSection>
         <TitleSection />
       </StyledTitleSection>
-      {/* sky glow */}
-      <Image
-        src="landing-page/sky_glow.svg"
-        alt="sky glow"
-        width={1000}
-        height={1000}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          transform: "translateY(-30%)",
-          width: "100%",
-          height: "auto",
-        }}
-      />
       {/* lower hero section */}
       <StyledLowerHeroSection>
         <Image

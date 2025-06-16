@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FAQSection,
   HeaderContainer,
@@ -11,6 +11,7 @@ import {
   Question,
   Answer,
   StyledIcon,
+  Subtitle,
 } from "./FAQ.styles";
 import { faqs, FAQ as FAQType } from "./faqs";
 import AddIcon from "@mui/icons-material/Add";
@@ -19,7 +20,27 @@ import { Container, Box } from "@mui/material";
 import Image from "next/image";
 
 const FAQ = () => {
+  const [isClient, setIsClient] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return (
+      <FAQSection>
+        <Container maxWidth="lg">
+          <HeaderContainer>
+            <Title variant="h2">Frequently Asked Questions</Title>
+            <Subtitle variant="h6">
+              Everything you need to know about UofTHacks 13
+            </Subtitle>
+          </HeaderContainer>
+        </Container>
+      </FAQSection>
+    );
+  }
 
   const handleAccordionChange =
     (faqId: number) => (_: React.SyntheticEvent, isExpanded: boolean) => {
