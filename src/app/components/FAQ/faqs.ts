@@ -24,7 +24,7 @@ export const faqs: FAQ[] = [
         id: 2,
         title: "When and where is UofTHacks held?",
         content:
-            "UofTHacks 12 is set to take place from January 17th to January 19th, 2025! This year’s event will be hosted entirely in-person in the Myhal Centre! The exact schedule of all the ceremonies, activities, and workshops will be released in the week leading up to the event!",
+            "UofTHacks 13 is set to take place in January, 2026! This year’s event will be hosted entirely in-person in the Myhal Centre! The exact schedule of all the ceremonies, activities, and workshops will be released in the week leading up to the event!",
     },
     {
         id: 3,
@@ -121,9 +121,9 @@ export const faqs: FAQ[] = [
     {
         id: 18,
         title:
-            "How do I apply to UofTHacks 12?",
+            "How do I apply to UofTHacks 13?",
         content:
-            `Our application period for UofTHacks 12 has already passed. We encourage you to follow us on Instagram to stay up to date with UofTHacks news!`
+            `Applications will be released later in the year!`
     },
     {
         id: 19,

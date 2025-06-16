@@ -101,7 +101,7 @@ const FAQ = () => {
           zIndex: -1,
         }}
       />
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <HeaderContainer>
           <Title variant="h2">Frequently Asked Questions</Title>
         </HeaderContainer>

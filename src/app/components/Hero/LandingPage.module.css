@@ -65,11 +65,40 @@
 .ctaButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(218, 98, 171, 0.4);
-  background: linear-gradient(135deg, #E574B8, #3BC2F0);
 }
 
 .ctaButton:active {
   transform: translateY(0);
+}
+
+.ctaInput {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  flex: 1;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.ctaInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statusMessage {
+  color: var(--accent-green);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.statusError {
+  color: var(--accent-red);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 /* Responsive design */
