@@ -54,9 +54,19 @@ const StyledAccordion = styled(Accordion)({
 const StyledAccordionSummary = styled(AccordionSummary)({
     padding: "clamp(1rem, 3vw, 1.5rem) 0 !important",
     minHeight: "auto !important",
+    position: "relative",
 
     "&:hover": {
-        background: "rgba(255, 255, 255, 0.01) !important",
+        "&::before": {
+            content: '""',
+            position: "absolute",
+            top: "clamp(0.25rem, 1vw, 0.5rem)",
+            bottom: "clamp(0.25rem, 1vw, 0.5rem)", 
+            left: -10,
+            right: 0,
+            background: "rgba(255, 255, 255, 0.05)",
+            pointerEvents: "none",
+        },
     },
 
     "& .MuiAccordionSummary-content": {
