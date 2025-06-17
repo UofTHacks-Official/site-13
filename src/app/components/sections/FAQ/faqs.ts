@@ -1,9 +1,11 @@
+const linkColour = "#6e9cc5"
+
 const email =
-    '<a href="mailto:official@uofthacks.com" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">official@uofthacks.com</a>';
+    `<a href="mailto:official@uofthacks.com" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">official@uofthacks.com</a>`;
 const covidPolicy =
-    '<a href="https://ehs.utoronto.ca/covid-19-information/" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">University of Toronto\'s</a>';
+    `<a href="https://ehs.utoronto.ca/covid-19-information/" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">University of Toronto\'s</a>`;
 const mlhcoc =
-    '<a href="http://hackp.ac/coc" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">Code of Conduct</a>';
+    `<a href="http://hackp.ac/coc" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">Code of Conduct</a>`;
 
 export interface FAQ {
     id: number;

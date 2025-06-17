@@ -54,7 +54,7 @@ const FAQ = () => {
       <FAQSection>
         <Container maxWidth="lg">
           <HeaderContainer>
-            <Title variant="h2">Frequently Asked Questions</Title>
+            <Title variant="h4">Frequently Asked Questions</Title>
             <Subtitle variant="h6">
               Everything you need to know about UofTHacks 13
             </Subtitle>
@@ -127,7 +127,7 @@ const FAQ = () => {
       </div>
       <Container maxWidth="md">
         <HeaderContainer>
-          <Title variant="h2">Frequently Asked Questions</Title>
+          <Title variant="h4">Frequently Asked Questions</Title>
         </HeaderContainer>
 
         <Box
