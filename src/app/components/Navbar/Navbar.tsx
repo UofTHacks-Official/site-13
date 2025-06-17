@@ -7,24 +7,38 @@ import Image from "next/image";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [maxScrollY, setMaxScrollY] = useState(0); // Track the furthest down we've scrolled
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Hide navbar when scrolling down, show when scrolling up
+      const scrollThreshold = 50; // How much to scroll up before showing navbar
+      
+      // Update max scroll position
+      if (currentScrollY > maxScrollY) {
+        setMaxScrollY(currentScrollY);
+      }
+      
+      // Hide navbar when scrolling down past 100px
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
-      } else {
-        setIsVisible(true);
+      } 
+      // Show navbar when scrolling up, but only after scrolling up by threshold amount
+      else if (currentScrollY < lastScrollY) {
+        const scrolledUpAmount = maxScrollY - currentScrollY;
+        
+        if (scrolledUpAmount >= scrollThreshold || currentScrollY <= 100) {
+          setIsVisible(true);
+          setMaxScrollY(currentScrollY); // Reset max scroll when navbar appears
+        }
       }
-
+      
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY, maxScrollY]);
 
   const handleMouseLeave = () => {
     // Only hide if user has scrolled down past 100px
@@ -38,6 +52,7 @@ const Navbar = () => {
       {/* Invisible hover area at top of screen */}
       <div
         className={styles.hoverArea}
+        style={{ pointerEvents: isVisible ? 'none' : 'auto' }}
         onMouseEnter={() => setIsVisible(true)}
         onMouseLeave={handleMouseLeave}
       />
@@ -103,7 +118,7 @@ const Navbar = () => {
             </svg>
           </a>
 
-          {/* Twitter/X */}
+          {/* Twitter */}
           <a
             href="https://x.com/uofthacks?lang=en"
             className={styles.socialLink}
