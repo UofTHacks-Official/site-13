@@ -38,6 +38,11 @@ const pixelifySans = Pixelify_Sans({
 export const metadata: Metadata = {
   title: "UofTHacks 13",
   description: "Welcome to UofTHacks 13!!! :)",
+  icons: {
+    icon: "/shared/uofthacks_logo.svg",
+    shortcut: "/shared/uofthacks_logo.svg",
+    apple: "/shared/uofthacks_logo.svg",
+  },
 };
 
 export default function RootLayout({
