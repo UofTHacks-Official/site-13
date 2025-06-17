@@ -19,9 +19,34 @@
   background: var(--star-white);
   border-radius: 50%;
   filter: blur(1px);
-  opacity: 0.2;
+  opacity: 0;
   transform: scale(0.8);
-  animation: twinkle infinite ease-in-out alternate;
+  animation: 
+    twinkle infinite ease-in-out alternate,
+    starAppear 0.8s ease-out forwards;
+}
+
+.star:nth-child(odd) {
+  animation-delay: 
+    0s, /* twinkle starts immediately */
+    0.5s; /* appearance delay */
+}
+
+.star:nth-child(even) {
+  animation-delay: 
+    0s, /* twinkle starts immediately */
+    1s; /* appearance delay */
+}
+
+@keyframes starAppear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1);
+  }
 }
 
 @keyframes twinkle {
