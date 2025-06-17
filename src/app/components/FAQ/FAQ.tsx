@@ -17,14 +17,36 @@ import { faqs, FAQ as FAQType } from "./faqs";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { Container, Box } from "@mui/material";
-import Image from "next/image";
 
 const FAQ = () => {
   const [isClient, setIsClient] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+  const [backgroundOpacity, setBackgroundOpacity] = useState(0);
 
   useEffect(() => {
     setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      const fadeStart = windowHeight * 0.6;
+      const fadeEnd = windowHeight * 0.8;
+
+      if (scrollY <= fadeStart) {
+        setBackgroundOpacity(0);
+      } else if (scrollY >= fadeEnd) {
+        setBackgroundOpacity(1);
+      } else {
+        const fadeProgress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+        setBackgroundOpacity(fadeProgress);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!isClient) {
@@ -88,19 +110,21 @@ const FAQ = () => {
 
   return (
     <FAQSection>
-      <Image
-        src="/landing-page/faq_background.svg"
-        alt="FAQ section upper"
-        width={1000}
-        height={1000}
+      <div
         style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
           width: "100%",
           height: "auto",
-          position: "absolute",
-          bottom: -1000,
           zIndex: -1,
+          pointerEvents: "none",
+          opacity: backgroundOpacity,
+          transition: "opacity 0.1s ease-out",
+          transform: `translateY(-10%)`,
         }}
-      />
+      >
+      </div>
       <Container maxWidth="md">
         <HeaderContainer>
           <Title variant="h2">Frequently Asked Questions</Title>

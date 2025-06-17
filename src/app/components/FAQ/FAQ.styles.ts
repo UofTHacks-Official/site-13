@@ -10,10 +10,10 @@ import { styled } from "@mui/material/styles";
 
 // Styled components
 const FAQSection = styled("section")({
-    padding: "clamp(6rem, 10vw, 10rem) 0 clamp(4rem, 8vw, 8rem) 0",
-    background: "var(--bg-primary)",
+    padding: "clamp(6rem, 10vw, 10rem) clamp(2rem, 4vw, 4rem) clamp(4rem, 8vw, 8rem)",
     color: "var(--text-primary)",
-    zIndex: 1000,
+    position: "relative",
+    zIndex: 1,
 });
 
 const HeaderContainer = styled(Box)({
@@ -55,7 +55,7 @@ const StyledAccordionSummary = styled(AccordionSummary)({
     minHeight: "auto !important",
 
     "&:hover": {
-        background: "var(--bg-secondary) !important",
+        background: "rgba(255, 255, 255, 0.01) !important",
     },
 
     "& .MuiAccordionSummary-content": {

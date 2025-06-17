@@ -12,18 +12,19 @@
     var(--night-tertiary) 100%
   );
   overflow: hidden;
+  transition: opacity 0.3s ease-out; /* For smooth scroll fade */
 }
 
 .star {
   position: absolute;
   background: var(--star-white);
   border-radius: 50%;
-  filter: blur(1px);
-  opacity: 0;
+  filter: blur(1.5px); /* This creates the glow effect */
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8); /* Additional glow */
+  /* Set initial state to match animation start */
+  opacity: 0.2;
   transform: scale(0.8);
-  animation: 
-    twinkle infinite ease-in-out alternate,
-    starAppear 0.8s ease-out forwards;
+  animation: twinkle infinite ease-in-out alternate;
 }
 
 .star:nth-child(odd) {
