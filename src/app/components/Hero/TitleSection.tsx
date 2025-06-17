@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./LandingPage.module.css";
 import axios, { AxiosError } from "axios";
+import { config } from "@/utils/config";
 
 const TitleSection = () => {
   const [email, setEmail] = useState("");
@@ -28,9 +29,12 @@ const TitleSection = () => {
     setStatus("idle");
 
     try {
-      await axios.post("https://staging.uofthacks.com/api/v13/mailing-list", {
-        email: email,
-      });
+      await axios.post(
+        `${config.baseUrl}/api/${config.apiVersion}/mailing-list`,
+        {
+          email: email,
+        }
+      );
 
       setStatus("success");
     } catch (error) {
@@ -80,6 +84,8 @@ const TitleSection = () => {
               placeholder={
                 status === "success" || status === "already-subscribed"
                   ? "Submitted!"
+                  : status === "error" 
+                  ? "Something went wrong :(" 
                   : "Sign up with your email for the latest updates!"
               }
               value={email}
@@ -97,11 +103,6 @@ const TitleSection = () => {
           </div>
         </div>
       </form>
-      {status === "error" && (
-        <p className={styles.statusError}>
-          Something went wrong. Please try again.
-        </p>
-      )}
     </div>
   );
 };

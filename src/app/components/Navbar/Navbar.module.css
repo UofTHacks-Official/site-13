@@ -3,8 +3,15 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px; /* Height of hover detection area */
-  z-index: 101; /* Above navbar */
+  height: 100px; /* Larger hover area */
+  z-index: 99; /* Below navbar but above content */
+  pointer-events: auto; /* Active when navbar is hidden */
+  transition: pointer-events 0.3s ease;
+}
+
+/* Hide hover area when navbar is visible to prevent conflicts */
+.hoverAreaHidden {
+  pointer-events: none;
 }
 
 .navbar {
@@ -12,7 +19,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 100; /* Above hover area */
   display: flex;
   justify-content: space-between;
   align-items: center;
