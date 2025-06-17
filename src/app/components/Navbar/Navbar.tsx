@@ -7,15 +7,19 @@ import Image from "next/image";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hiddenAtScrollY, setHiddenAtScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Simple logic: hide when scrolling down past 100px, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Hide when scrolling down past 100px
+      if (currentScrollY > lastScrollY && currentScrollY > 100 && isVisible) {
         setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
+        setHiddenAtScrollY(currentScrollY); // Remember where we hid it
+      } 
+      // Show when scrolling up at least 30px from where it was hidden
+      else if (currentScrollY < lastScrollY && !isVisible && (hiddenAtScrollY - currentScrollY) > 30) {
         setIsVisible(true);
       }
       
@@ -24,7 +28,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isVisible, hiddenAtScrollY]);
 
   // Combined hover handler for both hover area and navbar
   const handleMouseEnter = () => {
