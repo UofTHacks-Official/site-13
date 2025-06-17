@@ -2,8 +2,6 @@ const email =
     '<a href="mailto:official@uofthacks.com" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">official@uofthacks.com</a>';
 const covidPolicy =
     '<a href="https://ehs.utoronto.ca/covid-19-information/" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">University of Toronto\'s</a>';
-const instagram =
-    '<a href="https://www.instagram.com/uofthacks/" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">Instagram</a>';
 const mlhcoc =
     '<a href="http://hackp.ac/coc" target="_blank" rel="noopener" style="color: #225C90; font-weight: 700">Code of Conduct</a>';
 
@@ -128,6 +126,6 @@ export const faqs: FAQ[] = [
     {
         id: 19,
         title: "I still have a question...",
-        content: `No worries! You can use the Contact Us form below or reach out to us on ${instagram}, and we'll help with anything else you need!`,
+        content: `No worries! You can reach out to us at ${email}, and we'll help with anything else you need!`,
     },
 ];
