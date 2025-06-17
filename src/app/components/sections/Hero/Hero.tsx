@@ -1,7 +1,7 @@
 "use client";
 
 import StarryBackground from "@/app/components/ui/StarryBackground/StarryBackground";
-import Navbar from "@/app/components/Navbar/Navbar";
+import Navbar from "@/app/components/layout/Navbar/Navbar";
 import TitleSection from "./TitleSection";
 import { StyledTitleSection, StyledLowerHeroSection } from "./Hero.styles";
 import Image from "next/image";

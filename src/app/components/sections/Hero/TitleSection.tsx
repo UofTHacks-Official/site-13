@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import styles from "./LandingPage.module.css";
+import styles from "./Hero.module.css";
 import axios, { AxiosError } from "axios";
 import { config } from "@/utils/config";
 
