@@ -5,6 +5,8 @@ import {
   Oooh_Baby,
   Sixtyfour,
   Pixelify_Sans,
+  Inter,
+  Open_Sans,
 } from "next/font/google";
 
 import "./globals.css";
@@ -35,6 +37,16 @@ const pixelifySans = Pixelify_Sans({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "UofTHacks 13",
   description: "Welcome to UofTHacks 13!!! :)",
@@ -53,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${onset.variable} ${orbitron.variable} ${ooohBaby.variable} ${sixtyfour.variable} ${pixelifySans.variable}`}
+      className={`${openSans.variable} ${inter.variable} ${onset.variable} ${orbitron.variable} ${ooohBaby.variable} ${sixtyfour.variable} ${pixelifySans.variable}`}
     >
       <body>
         <main>{children}</main>
