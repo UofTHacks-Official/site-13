@@ -14,10 +14,6 @@ const FAQSection = styled("section")({
     background: "var(--bg-primary)",
     color: "var(--text-primary)",
     zIndex: 1000,
-    opacity: 0,
-    transform: "translateY(50px)",
-    animation: "fadeInUp 1s ease-out forwards",
-    animationDelay: "0.5s",
 });
 
 const HeaderContainer = styled(Box)({
@@ -109,8 +105,5 @@ const FAQGrid = styled(Grid)(({ theme }) => ({
         gap: "0 !important",
     },
 }));
-
-// Add this to your global CSS or FAQ styles
-
 
 export { FAQSection, HeaderContainer, Title, Subtitle, StyledAccordion, StyledAccordionSummary, StyledAccordionDetails, Question, Answer, StyledIcon, FAQGrid };
