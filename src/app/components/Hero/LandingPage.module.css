@@ -119,6 +119,10 @@
   justify-content: center;
 }
 
+.ctaForm {
+  width: 60%;
+}
+
 /* Remove the hardcoded media queries since we're using clamp() */
 @keyframes fadeInUp {
   to {
@@ -136,14 +140,19 @@
 
 /* Only keep essential responsive adjustments for layout */
 @media (max-width: 768px) {
+  .ctaForm {
+    width: 90%; /* Make form much wider on mobile */
+  }
+
   .ctaPillInner {
     gap: 0.5rem;
     padding: 0.25rem 0.25rem;
   }
 
   .ctaButton {
-    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(0.8rem, 2vw, 1rem);
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.2rem, 4vw, 1.8rem); /* Wider button */
     font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    min-width: 100px; /* Ensure minimum width */
   }
 
   .ctaInput {
@@ -157,19 +166,24 @@
 }
 
 @media (max-width: 480px) {
+  .ctaForm {
+    width: 95%; /* Even wider on tiny screens */
+  }
+
   .titleSection {
     width: 95%;
     gap: 1rem;
   }
-
+  
   .ctaPillInner {
     gap: 0.25rem;
     padding: 0.2rem 0.2rem;
   }
 
   .ctaButton {
-    padding: clamp(0.5rem, 1.2vw, 0.6rem) clamp(0.6rem, 1.5vw, 0.8rem);
+    padding: clamp(0.5rem, 1.2vw, 0.6rem) clamp(1rem, 3.5vw, 1.5rem); /* Wider button */
     font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+    min-width: 90px; /* Ensure minimum width */
   }
 
   .ctaInput {
