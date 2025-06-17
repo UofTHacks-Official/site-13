@@ -17,6 +17,13 @@ const TitleSection = () => {
     "var(--font-oooh-baby)",
     "var(--font-sixtyfour)",
   ];
+
+  const fontConfigs = [
+    { family: "var(--font-onset)", size: "6rem" },
+    { family: "var(--font-orbitron)", size: "5rem" },
+    { family: "var(--font-oooh-baby)", size: "6rem" },
+    { family: "var(--font-sixtyfour)", size: "3.8rem" },
+  ];
   const [currentFontIndex, setCurrentFontIndex] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -54,18 +61,21 @@ const TitleSection = () => {
       {/* Event details above title */}
       <p className={styles.eventDetails}>January, 2025 | In-person event</p>
 
-      {/* Main title with font cycling */}
-      <h1
-        className={styles.h1}
-        onClick={handleTitleClick}
-        style={{
-          fontFamily: fonts[currentFontIndex],
-          cursor: "pointer",
-          userSelect: "none",
-        }}
-      >
-        UOFTHACKS 13
-      </h1>
+      {/* Fixed height wrapper for title */}
+      <div className={styles.titleWrapper}>
+        <h1 
+          className={styles.h1}
+          onClick={handleTitleClick}
+          style={{ 
+            fontFamily: fontConfigs[currentFontIndex].family,
+            fontSize: fontConfigs[currentFontIndex].size,
+            cursor: "pointer",
+            userSelect: "none",
+          }}
+        >
+          UOFTHACKS 13
+        </h1>
+      </div>
 
       {/* Call-to-action pill below title */}
       <form onSubmit={handleSubmit} style={{ width: "80%" }}>
