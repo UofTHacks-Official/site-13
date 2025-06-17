@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import styles from "./LandingPage.module.css";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const TitleSection = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "success" | "error" | "already-subscribed"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,24 +19,21 @@ const TitleSection = () => {
     setStatus("idle");
 
     try {
-      const response = await axios.post(
-        "https://staging.uofthacks.com/api/v13/mailing-list",
-        {
-          email: email,
-        }
-      );
+      await axios.post("https://staging.uofthacks.com/api/v13/mailing-list", {
+        email: email,
+      });
 
-      if (response.status === 200) {
-        setStatus("success");
-        setEmail("");
+      setStatus("success");
+    } catch (error) {
+      if ((error as AxiosError).response?.status === 400) {
+        setStatus("already-subscribed");
       } else {
         setStatus("error");
+        console.error("Error: ", error);
       }
-    } catch (error) {
-      setStatus("error");
-      console.error(error);
     } finally {
       setIsSubmitting(false);
+      setEmail("");
     }
   };
 
@@ -52,7 +51,11 @@ const TitleSection = () => {
           <div className={styles.ctaPillInner}>
             <input
               type="email"
-              placeholder="Sign up with your email for the latest updates!"
+              placeholder={
+                status === "success" || status === "already-subscribed"
+                  ? "Submitted!"
+                  : "Enter your email"
+              }
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.ctaInput}
@@ -68,10 +71,6 @@ const TitleSection = () => {
           </div>
         </div>
       </form>
-
-      {status === "success" && (
-        <p className={styles.statusMessage}>Successfully subscribed!</p>
-      )}
       {status === "error" && (
         <p className={styles.statusError}>
           Something went wrong. Please try again.
