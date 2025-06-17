@@ -1,4 +1,4 @@
-const linkColour = "#6e9cc5"
+const linkColour = "#2EB6FF"
 
 const email =
     `<a href="mailto:official@uofthacks.com" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">official@uofthacks.com</a>`;
