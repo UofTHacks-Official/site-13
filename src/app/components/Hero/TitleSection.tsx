@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./LandingPage.module.css";
 import axios, { AxiosError } from "axios";
 import { config } from "@/utils/config";
@@ -11,15 +11,41 @@ const TitleSection = () => {
   const [status, setStatus] = useState<
     "idle" | "success" | "error" | "already-subscribed"
   >("idle");
+  const [isMobile, setIsMobile] = useState(false);
 
   const fontConfigs = [
-    { family: "var(--font-onset)", size: "6rem" },
-    { family: "var(--font-orbitron)", size: "5.2rem" },
-    { family: "var(--font-oooh-baby)", size: "5.8rem" },
-    { family: "var(--font-sixtyfour)", size: "4rem" },
-    { family: "var(--font-pixelify-sans)", size: "6.8rem" },
+    { family: "var(--font-onset)", size: "clamp(3rem, 8vw, 6rem)" },
+    { family: "var(--font-orbitron)", size: "clamp(2.6rem, 6.5vw, 5.2rem)" },
+    { family: "var(--font-oooh-baby)", size: "clamp(2.9rem, 7.25vw, 5.8rem)" },
+    { family: "var(--font-sixtyfour)", size: "clamp(2rem, 5vw, 4rem)" },
+    {
+      family: "var(--font-pixelify-sans)",
+      size: "clamp(3.4rem, 8.5vw, 6.8rem)",
+    },
   ];
   const [currentFontIndex, setCurrentFontIndex] = useState(0);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  const getPlaceholderText = () => {
+    if (status === "success" || status === "already-subscribed") {
+      return "Submitted!";
+    }
+    if (status === "error") {
+      return "Something went wrong :(";
+    }
+    return isMobile
+      ? "Join our mailing list!"
+      : "Sign up with your email for the latest updates!";
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,13 +107,7 @@ const TitleSection = () => {
           <div className={styles.ctaPillInner}>
             <input
               type="email"
-              placeholder={
-                status === "success" || status === "already-subscribed"
-                  ? "Submitted!"
-                  : status === "error" 
-                  ? "Something went wrong :(" 
-                  : "Sign up with your email for the latest updates!"
-              }
+              placeholder={getPlaceholderText()}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.ctaInput}

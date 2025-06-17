@@ -12,25 +12,25 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Hide when scrolling down past 100px
+
       if (currentScrollY > lastScrollY && currentScrollY > 100 && isVisible) {
         setIsVisible(false);
-        setHiddenAtScrollY(currentScrollY); // Remember where we hid it
-      } 
-      // Show when scrolling up at least 30px from where it was hidden
-      else if (currentScrollY < lastScrollY && !isVisible && (hiddenAtScrollY - currentScrollY) > 30) {
+        setHiddenAtScrollY(currentScrollY);
+      } else if (
+        currentScrollY < lastScrollY &&
+        !isVisible &&
+        hiddenAtScrollY - currentScrollY > 30
+      ) {
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, isVisible, hiddenAtScrollY]);
 
-  // Combined hover handler for both hover area and navbar
   const handleMouseEnter = () => {
     setIsVisible(true);
   };
@@ -44,13 +44,17 @@ const Navbar = () => {
   return (
     <>
       {/* Hover area - only active when navbar is hidden */}
-      <div 
-        className={`${styles.hoverArea} ${isVisible ? styles.hoverAreaHidden : ''}`}
+      <div
+        className={`${styles.hoverArea} ${
+          isVisible ? styles.hoverAreaHidden : ""
+        }`}
         onMouseEnter={handleMouseEnter}
       />
-      
-      <nav 
-        className={`${styles.navbar} ${isVisible ? styles.visible : styles.hidden}`}
+
+      <nav
+        className={`${styles.navbar} ${
+          isVisible ? styles.visible : styles.hidden
+        }`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
