@@ -7,41 +7,35 @@ import Image from "next/image";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [maxScrollY, setMaxScrollY] = useState(0); // Track the furthest down we've scrolled
+  const [hiddenAtScrollY, setHiddenAtScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollThreshold = 50; // How much to scroll up before showing navbar
-      
-      // Update max scroll position
-      if (currentScrollY > maxScrollY) {
-        setMaxScrollY(currentScrollY);
-      }
-      
-      // Hide navbar when scrolling down past 100px
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100 && isVisible) {
         setIsVisible(false);
-      } 
-      // Show navbar when scrolling up, but only after scrolling up by threshold amount
-      else if (currentScrollY < lastScrollY) {
-        const scrolledUpAmount = maxScrollY - currentScrollY;
-        
-        if (scrolledUpAmount >= scrollThreshold || currentScrollY <= 100) {
-          setIsVisible(true);
-          setMaxScrollY(currentScrollY); // Reset max scroll when navbar appears
-        }
+        setHiddenAtScrollY(currentScrollY);
+      } else if (
+        currentScrollY < lastScrollY &&
+        !isVisible &&
+        hiddenAtScrollY - currentScrollY > 30
+      ) {
+        setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, maxScrollY]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, isVisible, hiddenAtScrollY]);
+
+  const handleMouseEnter = () => {
+    setIsVisible(true);
+  };
 
   const handleMouseLeave = () => {
-    // Only hide if user has scrolled down past 100px
     if (window.scrollY > 100) {
       setIsVisible(false);
     }
@@ -49,18 +43,20 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Invisible hover area at top of screen */}
+      {/* Hover area - only active when navbar is hidden */}
       <div
-        className={styles.hoverArea}
-        style={{ pointerEvents: isVisible ? 'none' : 'auto' }}
-        onMouseEnter={() => setIsVisible(true)}
-        onMouseLeave={handleMouseLeave}
+        className={`${styles.hoverArea} ${
+          isVisible ? styles.hoverAreaHidden : ""
+        }`}
+        onMouseEnter={handleMouseEnter}
       />
 
       <nav
         className={`${styles.navbar} ${
           isVisible ? styles.visible : styles.hidden
         }`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {/* Logo on the left */}
         <div className={styles.logoContainer}>

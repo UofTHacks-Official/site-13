@@ -17,26 +17,81 @@
 
 .star {
   position: absolute;
-  background: var(--star-white);
-  border-radius: 50%;
-  filter: blur(1.5px); /* This creates the glow effect */
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8); /* Additional glow */
-  /* Set initial state to match animation start */
   opacity: 0.2;
   transform: scale(0.8);
   animation: twinkle infinite ease-in-out alternate;
 }
 
+/* Solid star center */
+.star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  background: var(--star-white);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Glowing background */
+.star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.1) 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+  z-index: 1;
+}
+
 .star:nth-child(odd) {
-  animation-delay: 
-    0s, /* twinkle starts immediately */
-    0.5s; /* appearance delay */
+  animation-delay: 0s, /* twinkle starts immediately */ 0.5s; /* appearance delay */
 }
 
 .star:nth-child(even) {
-  animation-delay: 
-    0s, /* twinkle starts immediately */
-    1s; /* appearance delay */
+  animation-delay: 0s, /* twinkle starts immediately */ 1s; /* appearance delay */
+}
+
+/* Add some variety to star colors */
+.star:nth-child(3n)::before {
+  background: var(--star-blue);
+}
+
+.star:nth-child(5n)::before {
+  background: var(--star-warm);
+}
+
+.star:nth-child(3n)::after {
+  background: radial-gradient(
+    circle,
+    rgba(230, 243, 255, 0.8) 0%,
+    rgba(230, 243, 255, 0.4) 30%,
+    rgba(230, 243, 255, 0.1) 70%,
+    transparent 100%
+  );
+}
+
+.star:nth-child(5n)::after {
+  background: radial-gradient(
+    circle,
+    rgba(255, 248, 225, 0.8) 0%,
+    rgba(255, 248, 225, 0.4) 30%,
+    rgba(255, 248, 225, 0.1) 70%,
+    transparent 100%
+  );
 }
 
 @keyframes starAppear {
@@ -56,8 +111,8 @@
     transform: scale(0.8);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1.1);
+    opacity: 0.9;
+    transform: scale(1.2);
   }
   100% {
     opacity: 0.3;

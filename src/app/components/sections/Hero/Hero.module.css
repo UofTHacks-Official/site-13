@@ -12,7 +12,7 @@
 }
 
 .eventDetails {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: 400;
   color: var(--text-light);
   opacity: 0;
@@ -23,7 +23,6 @@
 }
 
 .h1 {
-  font-size: 6rem;
   font-weight: 700;
   color: var(--text-light);
   margin: 0;
@@ -31,6 +30,16 @@
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.h1.interacted {
+  animation: none;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.h1.scrolling {
+  animation: scrollWheel 0.4s ease-in-out;
 }
 
 .ctaPill {
@@ -55,7 +64,7 @@
 
 .ctaText {
   color: var(--text-light);
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 500;
   white-space: nowrap;
   margin-left: 1rem;
@@ -66,8 +75,8 @@
   color: var(--text-light);
   border: none;
   border-radius: 50px;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.95rem;
+  padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -87,7 +96,7 @@
   background: transparent;
   border: none;
   color: var(--text-light);
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 500;
   outline: none;
   flex: 1;
@@ -101,74 +110,30 @@
 
 .statusMessage {
   color: var(--accent-green);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
   margin-top: 1rem;
   text-align: center;
 }
 
 .statusError {
   color: var(--accent-red);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
   margin-top: 1rem;
   text-align: center;
 }
 
 .titleWrapper {
-  height: 8rem;
+  height: clamp(4rem, 10vw, 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.h1 {
-  font-weight: 700;
-  color: var(--text-light);
-  margin: 0;
-  line-height: 1.1;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease-out 0.6s forwards;
+.ctaForm {
+  width: 60%;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .titleWrapper {
-    height: 6rem;
-  }
-
-  .h1 {
-    font-size: 4rem;
-  }
-
-  .eventDetails {
-    font-size: 1rem;
-  }
-
-  .ctaPillInner {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 1rem 1.5rem;
-  }
-
-  .ctaText {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .titleWrapper {
-    height: 4.5rem;
-  }
-
-  .h1 {
-    font-size: 3rem;
-  }
-
-  .eventDetails {
-    font-size: 0.9rem;
-  }
-}
-
+/* Remove the hardcoded media queries since we're using clamp() */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -180,5 +145,73 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Only keep essential responsive adjustments for layout */
+@media (max-width: 768px) {
+  .ctaForm {
+    width: 90%; /* Make form much wider on mobile */
+  }
+
+  .ctaPillInner {
+    gap: 0.5rem;
+    padding: 0.25rem 0.25rem;
+  }
+
+  .ctaButton {
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.2rem, 4vw, 1.8rem); /* Wider button */
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    min-width: 100px; /* Ensure minimum width */
+  }
+
+  .ctaInput {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  }
+
+  .titleSection {
+    width: 85%;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaForm {
+    width: 95%; /* Even wider on tiny screens */
+  }
+
+  .titleSection {
+    width: 95%;
+    gap: 1rem;
+  }
+  
+  .ctaPillInner {
+    gap: 0.25rem;
+    padding: 0.2rem 0.2rem;
+  }
+
+  .ctaButton {
+    padding: clamp(0.5rem, 1.2vw, 0.6rem) clamp(1rem, 3.5vw, 1.5rem); /* Wider button */
+    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+    min-width: 90px; /* Ensure minimum width */
+  }
+
+  .ctaInput {
+    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
   }
 }
