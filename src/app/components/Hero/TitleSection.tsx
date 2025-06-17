@@ -72,7 +72,7 @@ const TitleSection = () => {
       </div>
 
       {/* Call-to-action pill below title */}
-      <form onSubmit={handleSubmit} style={{ width: "80%" }}>
+      <form onSubmit={handleSubmit} style={{ width: "60%" }}>
         <div className={styles.ctaPill}>
           <div className={styles.ctaPillInner}>
             <input

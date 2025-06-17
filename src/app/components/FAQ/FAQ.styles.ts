@@ -22,6 +22,7 @@ const HeaderContainer = styled(Box)({
 });
 
 const Title = styled(Typography)({
+    fontFamily: "var(--font-inter) !important",
     fontSize: "clamp(2.2rem, 5vw, 3.5rem) !important",
     fontWeight: "700 !important",
     marginBottom: "1rem !important",
@@ -71,9 +72,11 @@ const StyledAccordionSummary = styled(AccordionSummary)({
 
 const StyledAccordionDetails = styled(AccordionDetails)({
     padding: "0 0 clamp(1rem, 3vw, 1.5rem) 0 !important",
+    paddingLeft: "calc(1.5rem + 1rem) !important",
 });
 
 const Question = styled(Typography)({
+    fontFamily: "var(--font-open-sans) !important",
     fontSize: "clamp(0.9rem, 1.8vw, 1rem) !important",
     fontWeight: "600 !important",
     color: "var(--text-primary)",
@@ -81,6 +84,7 @@ const Question = styled(Typography)({
 });
 
 const Answer = styled(Typography)({
+    fontFamily: "var(--font-open-sans) !important",
     fontSize: "clamp(0.85rem, 1.6vw, 0.9rem) !important",
     color: "var(--text-secondary)",
     lineHeight: "1.6 !important",
