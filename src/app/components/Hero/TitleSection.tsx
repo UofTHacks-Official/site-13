@@ -11,6 +11,14 @@ const TitleSection = () => {
     "idle" | "success" | "error" | "already-subscribed"
   >("idle");
 
+  const fonts = [
+    "var(--font-onset)",
+    "var(--font-orbitron)",
+    "var(--font-oooh-baby)",
+    "var(--font-sixtyfour)",
+  ];
+  const [currentFontIndex, setCurrentFontIndex] = useState(0);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
@@ -37,13 +45,27 @@ const TitleSection = () => {
     }
   };
 
+  const handleTitleClick = () => {
+    setCurrentFontIndex((prev) => (prev + 1) % fonts.length);
+  };
+
   return (
     <div className={styles.titleSection}>
       {/* Event details above title */}
       <p className={styles.eventDetails}>January, 2025 | In-person event</p>
 
-      {/* Main title */}
-      <h1 className={styles.h1}>UOFTHACKS 13</h1>
+      {/* Main title with font cycling */}
+      <h1
+        className={styles.h1}
+        onClick={handleTitleClick}
+        style={{
+          fontFamily: fonts[currentFontIndex],
+          cursor: "pointer",
+          userSelect: "none",
+        }}
+      >
+        UOFTHACKS 13
+      </h1>
 
       {/* Call-to-action pill below title */}
       <form onSubmit={handleSubmit} style={{ width: "80%" }}>
