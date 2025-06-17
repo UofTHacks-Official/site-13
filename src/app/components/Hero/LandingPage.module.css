@@ -32,6 +32,16 @@
   animation: fadeInUp 1s ease-out 0.6s forwards;
 }
 
+.h1.interacted {
+  animation: none;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.h1.scrolling {
+  animation: scrollWheel 0.4s ease-in-out;
+}
+
 .ctaPill {
   background: linear-gradient(135deg, #ffffff, #ff8cc3);
   border-radius: 50px;
@@ -135,6 +145,21 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

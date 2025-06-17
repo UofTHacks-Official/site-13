@@ -12,6 +12,8 @@ const TitleSection = () => {
     "idle" | "success" | "error" | "already-subscribed"
   >("idle");
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const fontConfigs = [
     { family: "var(--font-onset)", size: "clamp(3rem, 8vw, 6rem)" },
@@ -77,7 +79,21 @@ const TitleSection = () => {
   };
 
   const handleTitleClick = () => {
-    setCurrentFontIndex((prev) => (prev + 1) % fontConfigs.length);
+    if (isScrolling) return;
+    
+    if (!hasInteracted) {
+      setHasInteracted(true);
+    }
+    
+    setIsScrolling(true);
+    
+    setTimeout(() => {
+      setCurrentFontIndex((prev) => (prev + 1) % fontConfigs.length);
+    }, 200);
+    
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 400);
   };
 
   return (
@@ -88,7 +104,7 @@ const TitleSection = () => {
       {/* Fixed height wrapper for title */}
       <div className={styles.titleWrapper}>
         <h1
-          className={styles.h1}
+          className={`${styles.h1} ${isScrolling ? styles.scrolling : ''} ${hasInteracted ? styles.interacted : ''}`}
           onClick={handleTitleClick}
           style={{
             fontFamily: fontConfigs[currentFontIndex].family,
