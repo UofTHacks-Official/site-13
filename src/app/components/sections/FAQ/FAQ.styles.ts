@@ -23,7 +23,7 @@ const HeaderContainer = styled(Box)({
 
 const Title = styled(Typography)({
     fontFamily: "var(--font-inter) !important",
-    fontSize: "clamp(2.2rem, 5vw, 3.5rem) !important",
+    fontSize: "clamp(1.8rem, 5vw, 2.5rem) !important",
     fontWeight: "700 !important",
     marginBottom: "1rem !important",
     color: "var(--text-primary)",
