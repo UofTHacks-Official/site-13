@@ -11,18 +11,12 @@ const TitleSection = () => {
     "idle" | "success" | "error" | "already-subscribed"
   >("idle");
 
-  const fonts = [
-    "var(--font-onset)",
-    "var(--font-orbitron)",
-    "var(--font-oooh-baby)",
-    "var(--font-sixtyfour)",
-  ];
-
   const fontConfigs = [
     { family: "var(--font-onset)", size: "6rem" },
-    { family: "var(--font-orbitron)", size: "5rem" },
-    { family: "var(--font-oooh-baby)", size: "6rem" },
-    { family: "var(--font-sixtyfour)", size: "3.8rem" },
+    { family: "var(--font-orbitron)", size: "5.2rem" },
+    { family: "var(--font-oooh-baby)", size: "5.8rem" },
+    { family: "var(--font-sixtyfour)", size: "4rem" },
+    { family: "var(--font-pixelify-sans)", size: "6.8rem" },
   ];
   const [currentFontIndex, setCurrentFontIndex] = useState(0);
 
@@ -53,7 +47,7 @@ const TitleSection = () => {
   };
 
   const handleTitleClick = () => {
-    setCurrentFontIndex((prev) => (prev + 1) % fonts.length);
+    setCurrentFontIndex((prev) => (prev + 1) % fontConfigs.length);
   };
 
   return (
@@ -63,10 +57,10 @@ const TitleSection = () => {
 
       {/* Fixed height wrapper for title */}
       <div className={styles.titleWrapper}>
-        <h1 
+        <h1
           className={styles.h1}
           onClick={handleTitleClick}
-          style={{ 
+          style={{
             fontFamily: fontConfigs[currentFontIndex].family,
             fontSize: fontConfigs[currentFontIndex].size,
             cursor: "pointer",

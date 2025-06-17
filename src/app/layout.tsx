@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Onest, Orbitron, Oooh_Baby, Sixtyfour } from "next/font/google";
+import {
+  Onest,
+  Orbitron,
+  Oooh_Baby,
+  Sixtyfour,
+  Pixelify_Sans,
+} from "next/font/google";
 
 import "./globals.css";
 
@@ -24,6 +30,11 @@ const sixtyfour = Sixtyfour({
   subsets: ["latin"],
 });
 
+const pixelifySans = Pixelify_Sans({
+  variable: "--font-pixelify-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "UofTHacks 13",
   description: "Welcome to UofTHacks 13!!! :)",
@@ -37,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${onset.variable} ${orbitron.variable} ${ooohBaby.variable} ${sixtyfour.variable}`}
+      className={`${onset.variable} ${orbitron.variable} ${ooohBaby.variable} ${sixtyfour.variable} ${pixelifySans.variable}`}
     >
       <body>
         <main>{children}</main>
