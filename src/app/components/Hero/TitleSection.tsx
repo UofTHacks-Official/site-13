@@ -54,7 +54,7 @@ const TitleSection = () => {
               placeholder={
                 status === "success" || status === "already-subscribed"
                   ? "Submitted!"
-                  : "Enter your email"
+                  : "Sign up with your email for the latest updates!"
               }
               value={email}
               onChange={(e) => setEmail(e.target.value)}

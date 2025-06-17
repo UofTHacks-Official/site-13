@@ -20,7 +20,13 @@ const Navbar = () => {
       {/* Social media icons on the right */}
       <div className={styles.socialContainer}>
         {/* LinkedIn */}
-        <a href="#" className={styles.socialLink} aria-label="LinkedIn">
+        <a
+          href="https://ca.linkedin.com/company/uoftorontohacks"
+          className={styles.socialLink}
+          aria-label="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             width="24"
             height="24"
@@ -35,7 +41,13 @@ const Navbar = () => {
           </svg>
         </a>
         {/* Instagram */}
-        <a href="#" className={styles.socialLink} aria-label="Instagram">
+        <a
+          href="https://www.instagram.com/uofthacks/?hl=en"
+          className={styles.socialLink}
+          aria-label="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             width="24"
             height="24"
@@ -51,7 +63,13 @@ const Navbar = () => {
         </a>
 
         {/* Twitter/X */}
-        <a href="#" className={styles.socialLink} aria-label="Twitter">
+        <a
+          href="https://x.com/uofthacks?lang=en"
+          className={styles.socialLink}
+          aria-label="Twitter"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             width="24"
             height="24"
