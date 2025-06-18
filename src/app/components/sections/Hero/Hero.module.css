@@ -96,9 +96,9 @@
 .ctaInput {
   background: transparent;
   border: none;
-  color: var(--text-light);
+  color: #fef7e0;
+  font-family: var(--font-inter);
   font-size: clamp(0.9rem, 2vw, 1rem);
-  font-weight: 500;
   outline: none;
   flex: 1;
   margin-left: 1rem;
@@ -118,7 +118,7 @@
 
 .statusError {
   color: var(--accent-red);
-  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  font-size: clamp(0.6rem, 2vw, 0.8rem);
   margin-top: 1rem;
   text-align: center;
 }
@@ -182,7 +182,14 @@
   }
 
   .ctaInput {
-    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    font-family: var(--font-inter);
+  }
+
+  .ctaInput::placeholder {
+    color: #fef7e0;
+    font-family: var(--font-inter);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
   }
 
   .titleSection {
@@ -200,7 +207,7 @@
     width: 95%;
     gap: 1rem;
   }
-  
+
   .ctaPillInner {
     gap: 0.25rem;
     padding: 0.2rem 0.2rem;
@@ -210,9 +217,5 @@
     padding: clamp(0.5rem, 1.2vw, 0.6rem) clamp(1rem, 3.5vw, 1.5rem); /* Wider button */
     font-size: clamp(0.75rem, 1.6vw, 0.85rem);
     min-width: 90px; /* Ensure minimum width */
-  }
-
-  .ctaInput {
-    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
   }
 }
