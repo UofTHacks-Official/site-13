@@ -29,7 +29,7 @@ const TitleSection = () => {
 
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1325);
     };
 
     checkIsMobile();
@@ -99,7 +99,7 @@ const TitleSection = () => {
   return (
     <div className={styles.titleSection}>
       {/* Event details above title */}
-      <p className={styles.eventDetails}>January, 2025 | In-person event</p>
+      <p className={styles.eventDetails}>January, 2026 | In-person event</p>
 
       {/* Fixed height wrapper for title */}
       <div className={styles.titleWrapper}>

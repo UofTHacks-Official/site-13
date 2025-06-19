@@ -165,7 +165,7 @@
 }
 
 /* Only keep essential responsive adjustments for layout */
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .ctaForm {
     width: 90%; /* Make form much wider on mobile */
   }

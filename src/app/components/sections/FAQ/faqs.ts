@@ -107,7 +107,7 @@ export const faqs: FAQ[] = [
     {
         id: 16,
         title:
-            "Are sleeping areas or supplies available for participants at UofTHacks 2025?",
+            "Are sleeping areas or supplies available for participants at UofTHacks 13?",
         content:
             "Unfortunately, we are unable to provide on-site sleeping accommodations as the booked spaces are not equipped with sleeping quarters.",
     },
