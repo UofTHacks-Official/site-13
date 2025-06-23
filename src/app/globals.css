@@ -1,81 +1,81 @@
 :root {
-    /* Primary Colors */
-    --primary-black: #0a0a0a;
-    --primary-white: #ffffff;
-    
-    /* Secondary Colors */
-    --secondary-black: #171717;
-    --secondary-white: #f8f9fa;
-    
-    /* Tertiary Colors */
-    --tertiary-black: #2d2d2d;
-    --tertiary-white: #e9ecef;
-    
-    /* Night Sky Colors */
-    /* --night-primary: #010101;
+  /* Primary Colors */
+  --primary-black: #0a0a0a;
+  --primary-white: #ffffff;
+
+  /* Secondary Colors */
+  --secondary-black: #171717;
+  --secondary-white: #f8f9fa;
+
+  /* Tertiary Colors */
+  --tertiary-black: #2d2d2d;
+  --tertiary-white: #e9ecef;
+
+  /* Night Sky Colors */
+  /* --night-primary: #010101;
     --night-secondary: #010101;
     --night-tertiary: #010101;
     --night-accent: #010101; */
 
-    --night-primary: #010101;
-    --night-secondary: #1a1a2e;
-    --night-tertiary: #16213e;
-    --night-accent: #2a2a5a;
-    
-    /* Star Colors */
-    --star-white: #ffffff;
-    --star-blue: #e6f3ff;
-    --star-warm: #fff8e1;
-    
-    /* Accent Colors */
-    --accent-blue: #007acc;
-    --accent-purple: #6f42c1;
-    --accent-green: #28a745;
-    --accent-red: #dc3545;
-    --accent-yellow: #ffc107;
-    --accent-orange: #fd7e14;
-    
-    /* Gray Scale */
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
-    
-    /* Semantic Colors */
-    --success: var(--accent-green);
-    --warning: var(--accent-yellow);
-    --error: var(--accent-red);
-    --info: var(--accent-blue);
-    
-    /* Background Colors - Now default to dark */
-    --bg-primary: var(--primary-black);
-    --bg-secondary: var(--secondary-black);
-    --bg-tertiary: var(--tertiary-black);
-    --bg-dark: var(--primary-black);
-    --bg-night: var(--night-primary);
-    
-    /* Text Colors - Now default to dark theme */
-    --text-primary: var(--primary-white);
-    --text-secondary: var(--secondary-white);
-    --text-tertiary: var(--tertiary-white);
-    --text-light: var(--primary-white);
-    --text-muted: var(--gray-400);
-    
-    /* Border Colors - Dark theme borders */
-    --border-light: var(--gray-700);
-    --border-medium: var(--gray-600);
-    --border-dark: var(--gray-400);
-    
-    /* Shadow Colors - Dark theme shadows */
-    --shadow-light: rgba(255, 255, 255, 0.1);
-    --shadow-medium: rgba(255, 255, 255, 0.15);
-    --shadow-dark: rgba(255, 255, 255, 0.25);
+  --night-primary: #010101;
+  --night-secondary: #1a1a2e;
+  --night-tertiary: #16213e;
+  --night-accent: #2a2a5a;
+
+  /* Star Colors */
+  --star-white: #ffffff;
+  --star-blue: #e6f3ff;
+  --star-warm: #fff8e1;
+
+  /* Accent Colors */
+  --accent-blue: #007acc;
+  --accent-purple: #6f42c1;
+  --accent-green: #28a745;
+  --accent-red: #dc3545;
+  --accent-yellow: #ffc107;
+  --accent-orange: #fd7e14;
+
+  /* Gray Scale */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Semantic Colors */
+  --success: var(--accent-green);
+  --warning: var(--accent-yellow);
+  --error: var(--accent-red);
+  --info: var(--accent-blue);
+
+  /* Background Colors - Now default to dark */
+  --bg-primary: var(--primary-black);
+  --bg-secondary: var(--secondary-black);
+  --bg-tertiary: var(--tertiary-black);
+  --bg-dark: var(--primary-black);
+  --bg-night: var(--night-primary);
+
+  /* Text Colors - Now default to dark theme */
+  --text-primary: var(--primary-white);
+  --text-secondary: var(--secondary-white);
+  --text-tertiary: var(--tertiary-white);
+  --text-light: var(--primary-white);
+  --text-muted: var(--gray-400);
+
+  /* Border Colors - Dark theme borders */
+  --border-light: var(--gray-700);
+  --border-medium: var(--gray-600);
+  --border-dark: var(--gray-400);
+
+  /* Shadow Colors - Dark theme shadows */
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-medium: rgba(255, 255, 255, 0.15);
+  --shadow-dark: rgba(255, 255, 255, 0.25);
 }
 
 html,

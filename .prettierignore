@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Production builds
+.next/
+out/
+build/
+
+# Cache
+.cache/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# Generated files
+*.tsbuildinfo

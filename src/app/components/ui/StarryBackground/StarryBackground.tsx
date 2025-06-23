@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+
 import styles from "./StarryBackground.module.css";
 
 interface Star {
@@ -106,8 +107,10 @@ const StarryBackground = () => {
       />
 
       {/* Stars */}
-      <div style={{ opacity: starsOpacity, transition: "opacity 0.3s ease-out" }}>
-        {stars.map((star) => (
+      <div
+        style={{ opacity: starsOpacity, transition: "opacity 0.3s ease-out" }}
+      >
+        {stars.map(star => (
           <div
             key={star.id}
             className={styles.star}
