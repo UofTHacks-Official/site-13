@@ -10,7 +10,7 @@ jobs:
   quality-checks:
     name: Code Quality & Build
     runs-on: ubuntu-latest
-    
+
     env:
       NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
       NEXT_PUBLIC_API_VERSION: ${{ secrets.NEXT_PUBLIC_API_VERSION }}
