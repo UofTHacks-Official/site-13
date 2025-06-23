@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./Navbar.module.css";
 import Image from "next/image";
+
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);

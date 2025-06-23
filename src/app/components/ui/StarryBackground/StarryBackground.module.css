@@ -24,7 +24,7 @@
 
 /* Solid star center */
 .star::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,7 +38,7 @@
 
 /* Glowing background */
 .star::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -58,11 +58,15 @@
 }
 
 .star:nth-child(odd) {
-  animation-delay: 0s, /* twinkle starts immediately */ 0.5s; /* appearance delay */
+  animation-delay:
+    0s,
+    /* twinkle starts immediately */ 0.5s; /* appearance delay */
 }
 
 .star:nth-child(even) {
-  animation-delay: 0s, /* twinkle starts immediately */ 1s; /* appearance delay */
+  animation-delay:
+    0s,
+    /* twinkle starts immediately */ 1s; /* appearance delay */
 }
 
 /* Add some variety to star colors */

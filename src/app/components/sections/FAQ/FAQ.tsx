@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { Container, Box } from "@mui/material";
+
+import { faqs, FAQ as FAQType } from "./faqs";
 import {
   FAQSection,
   HeaderContainer,
@@ -13,10 +18,6 @@ import {
   StyledIcon,
   Subtitle,
 } from "./FAQ.styles";
-import { faqs, FAQ as FAQType } from "./faqs";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import { Container, Box } from "@mui/material";
 
 const FAQ = () => {
   const [isClient, setIsClient] = useState(false);
@@ -66,7 +67,7 @@ const FAQ = () => {
 
   const handleAccordionChange =
     (faqId: number) => (_: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpandedItems((prev) => {
+      setExpandedItems(prev => {
         const newSet = new Set(prev);
         if (isExpanded) {
           newSet.add(faqId);
@@ -83,7 +84,7 @@ const FAQ = () => {
 
   const renderFAQColumn = (faqList: FAQType[]) => (
     <Box>
-      {faqList.map((faq) => (
+      {faqList.map(faq => (
         <StyledAccordion
           key={faq.id}
           expanded={expandedItems.has(faq.id)}
@@ -123,8 +124,7 @@ const FAQ = () => {
           transition: "opacity 0.1s ease-out",
           transform: `translateY(-10%)`,
         }}
-      >
-      </div>
+      ></div>
       <Container maxWidth="md">
         <HeaderContainer>
           <Title variant="h4">Frequently Asked Questions</Title>

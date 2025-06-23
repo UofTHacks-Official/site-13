@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import styles from "./Hero.module.css";
 import axios, { AxiosError } from "axios";
+
 import { config } from "@/utils/config";
+
+import styles from "./Hero.module.css";
 
 const TitleSection = () => {
   const [email, setEmail] = useState("");
@@ -70,7 +72,6 @@ const TitleSection = () => {
         setStatus("already-subscribed");
       } else {
         setStatus("error");
-        console.error("Error: ", error);
       }
     } finally {
       setIsSubmitting(false);
@@ -80,17 +81,17 @@ const TitleSection = () => {
 
   const handleTitleClick = () => {
     if (isScrolling) return;
-    
+
     if (!hasInteracted) {
       setHasInteracted(true);
     }
-    
+
     setIsScrolling(true);
-    
+
     setTimeout(() => {
-      setCurrentFontIndex((prev) => (prev + 1) % fontConfigs.length);
+      setCurrentFontIndex(prev => (prev + 1) % fontConfigs.length);
     }, 200);
-    
+
     setTimeout(() => {
       setIsScrolling(false);
     }, 400);
@@ -104,7 +105,7 @@ const TitleSection = () => {
       {/* Fixed height wrapper for title */}
       <div className={styles.titleWrapper}>
         <h1
-          className={`${styles.h1} ${isScrolling ? styles.scrolling : ''} ${hasInteracted ? styles.interacted : ''}`}
+          className={`${styles.h1} ${isScrolling ? styles.scrolling : ""} ${hasInteracted ? styles.interacted : ""}`}
           onClick={handleTitleClick}
           style={{
             fontFamily: fontConfigs[currentFontIndex].family,
@@ -125,7 +126,7 @@ const TitleSection = () => {
               type="email"
               placeholder={getPlaceholderText()}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
               className={styles.ctaInput}
               required
             />
