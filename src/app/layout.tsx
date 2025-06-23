@@ -8,9 +8,8 @@ import {
   Inter,
   Open_Sans,
 } from "next/font/google";
-
 import "./globals.css";
-
+import Script from "next/script";
 const onset = Onest({
   variable: "--font-onset",
   subsets: ["latin"],
@@ -68,6 +67,19 @@ export default function RootLayout({
       className={`${openSans.variable} ${inter.variable} ${onset.variable} ${orbitron.variable} ${ooohBaby.variable} ${sixtyfour.variable} ${pixelifySans.variable}`}
     >
       <body>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PWQ4PT57QH"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-script" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PWQ4PT57QH');
+          `}
+        </Script>
         <main>{children}</main>
       </body>
     </html>
