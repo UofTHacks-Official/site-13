@@ -1,6 +1,6 @@
 const linkColour = "#2EB6FF";
 
-const email = `<a href="mailto:official@uofthacks.com" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">official@uofthacks.com</a>`;
+const email = `<a href="mailto:contact@uofthacks.com" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">official@uofthacks.com</a>`;
 const covidPolicy = `<a href="https://ehs.utoronto.ca/covid-19-information/" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">University of Toronto\'s</a>`;
 const mlhcoc = `<a href="http://hackp.ac/coc" target="_blank" rel="noopener" style="color: ${linkColour}; font-weight: 700">Code of Conduct</a>`;
 
