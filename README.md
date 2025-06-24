@@ -10,6 +10,21 @@
 - **Validation**: Zod
 - **Code Quality**: ESLint + Prettier + Husky
 
+## 📋 Prerequisites
+
+This project requires **Node.js 22.15.0** or higher. We enforce this through multiple methods:
+
+### Option 1: Using NVM (Recommended)
+
+````bash
+# Install and use the correct Node version
+nvm install
+nvm use
+
+### Option 2: Manual Installation
+- Install Node.js 22.15.0+ from [nodejs.org](https://nodejs.org/)
+- Verify: `node --version` should show v22.15.0 or higher
+
 ## 📦 Installation
 
 1. Clone the repository:
@@ -17,28 +32,34 @@
 ```bash
 git clone <repository-url>
 cd site-13
+````
+
+2. Ensure you're using the correct Node version:
+
+```bash
+node --version  # Should be v22.15.0 or higher
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
+4. Set up environment variables:
 
 ```bash
 cp .env.example .env.local
 # Edit .env.local with your values
 ```
 
-4. Run the development server:
+5. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🧪 Development Scripts
 
