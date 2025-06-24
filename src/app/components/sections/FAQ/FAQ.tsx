@@ -67,7 +67,7 @@ const FAQ = () => {
 
   const handleAccordionChange =
     (faqId: number) => (_: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpandedItems(prev => {
+      setExpandedItems((prev) => {
         const newSet = new Set(prev);
         if (isExpanded) {
           newSet.add(faqId);
@@ -84,7 +84,7 @@ const FAQ = () => {
 
   const renderFAQColumn = (faqList: FAQType[]) => (
     <Box>
-      {faqList.map(faq => (
+      {faqList.map((faq) => (
         <StyledAccordion
           key={faq.id}
           expanded={expandedItems.has(faq.id)}
