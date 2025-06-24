@@ -89,7 +89,7 @@ const TitleSection = () => {
     setIsScrolling(true);
 
     setTimeout(() => {
-      setCurrentFontIndex(prev => (prev + 1) % fontConfigs.length);
+      setCurrentFontIndex((prev) => (prev + 1) % fontConfigs.length);
     }, 200);
 
     setTimeout(() => {
@@ -126,7 +126,7 @@ const TitleSection = () => {
               type="email"
               placeholder={getPlaceholderText()}
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               className={styles.ctaInput}
               required
             />

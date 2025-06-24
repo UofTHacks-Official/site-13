@@ -110,7 +110,7 @@ const StarryBackground = () => {
       <div
         style={{ opacity: starsOpacity, transition: "opacity 0.3s ease-out" }}
       >
-        {stars.map(star => (
+        {stars.map((star) => (
           <div
             key={star.id}
             className={styles.star}
