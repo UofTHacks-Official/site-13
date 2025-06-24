@@ -17,6 +17,3 @@ build/
 
 # Generated files
 *.tsbuildinfo
-
-# GitHub Actions workflows
-.github/
