@@ -49,8 +49,12 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "tsc --noEmit",
+    "*.{ts,tsx}": [
+      "bash -c 'tsc --noEmit --skipLibCheck'",
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
       "eslint --fix",
       "prettier --write"
     ],

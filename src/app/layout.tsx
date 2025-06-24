@@ -10,6 +10,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+
 const onset = Onest({
   variable: "--font-onset",
   subsets: ["latin"],
