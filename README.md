@@ -16,12 +16,14 @@ This project requires **Node.js 22.15.0** or higher. We enforce this through mul
 
 ### Option 1: Using NVM (Recommended)
 
-````bash
+```bash
 # Install and use the correct Node version
 nvm install
 nvm use
+```
 
 ### Option 2: Manual Installation
+
 - Install Node.js 22.15.0+ from [nodejs.org](https://nodejs.org/)
 - Verify: `node --version` should show v22.15.0 or higher
 
@@ -32,7 +34,7 @@ nvm use
 ```bash
 git clone <repository-url>
 cd site-13
-````
+```
 
 2. Ensure you're using the correct Node version:
 
